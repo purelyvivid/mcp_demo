@@ -1,0 +1,4 @@
+ mcp[cli]
+ fastapi[standard]
+ fastapi-mcp
+ 
