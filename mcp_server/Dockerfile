@@ -31,5 +31,5 @@ ENTRYPOINT []
 EXPOSE 8000
 
 # Run the FastAPI application by default
-CMD ["fastapi", "dev","--host", "0.0.0.0","--port", "8000", "server-fastapimcp.py"]
+CMD ["fastapi", "dev","--host", "0.0.0.0","--port", "8000", "mcp_server/math.py"]
 

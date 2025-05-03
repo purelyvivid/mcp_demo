@@ -27,19 +27,9 @@ ENV PATH="/app/.venv/bin:$PATH"
 # Reset the entrypoint, don't invoke `uv`
 ENTRYPOINT []
 
-# Install NodeJS
-RUN apt update && apt install -y npm 
-#RUN npx @modelcontextprotocol/inspector
-RUN echo node_version=$(node -v) 
-RUN npm i @modelcontextprotocol/inspector@0.10.2
-#RUN CLIENT_PORT=8081 SERVER_PORT=9000 npx @modelcontextprotocol/inspector 
 
-EXPOSE 6274
-EXPOSE 6277
-
-#EXPOSE 8081
-#EXPOSE 9000
+EXPOSE 8000
 
 # Run the FastAPI application by default
-#CMD ["mcp", "run","server-1.py"] #v1.0.1
-CMD ["npx" ,"@modelcontextprotocol/inspector"]
+CMD ["fastapi", "dev","--host", "0.0.0.0","--port", "8000", "fastapi_mcp_server/weather/main.py"]
+
