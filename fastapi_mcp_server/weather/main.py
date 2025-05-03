@@ -34,7 +34,7 @@ def analyze_sentiment(text: str) -> dict:
     else:
         return {"sentiment": "neutral", "confidence": 0.6}
 
-mcp = FastApiMCP(app)
+mcp = FastApiMCP(app, )
 
 # Mount the MCP server directly to your FastAPI app
 mcp.mount()
